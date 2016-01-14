@@ -87,8 +87,8 @@ PATH=$GOROOT/bin:$GOBIN:$PATH
 unset GIT_DIR # unset git dir or it will mess with goinstall
 
 cd $build
-step "Running: gb build"
-gb build
+step "Running: gb build -tags heroku"
+gb build -tags heroku
 
 mkdir -p $build/.profile.d
 echo 'PATH=$PATH:$HOME/bin' > $build/.profile.d/go.sh
